@@ -1,0 +1,7 @@
+"2","Warning in gzfile(file, ""wb"") :"
+"2","
+ "
+"2"," cannot open compressed file 'C:/Users/jadh8/OneDrive - Johns Hopkins/Desktop/Data Files/Data Workflow - Git/Data-Workflow-Git/Git Directory/Philadelphia SD Data Project/Philadelphia/.Rproj.user/shared/notebooks/4506A8CD-Homework8/1/3735C4D83AD2410C/c13up03ya0m2t_t/92b1ed334990477cb5ddce7a4ead184a.snapshot', probable reason 'No such file or directory'
+"
+"2","Error in gzfile(file, ""wb"") : cannot open the connection
+"

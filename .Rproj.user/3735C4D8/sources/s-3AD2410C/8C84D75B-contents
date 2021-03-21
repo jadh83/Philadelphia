@@ -1,0 +1,73 @@
+---
+title: "Homework 8"
+output: html_notebook
+---
+
+```{r}
+
+library(tidyverse)
+library(patchwork)
+
+theme_set(theme_classic())
+```
+
+```{r}
+ggplot(analytic_algebra) +
+  geom_hline(aes(yintercept = (overall.percent.advanced + overall.percent.proficient)), linetype = "dashed", color = "blue") +
+  geom_point(aes(x = percent.black.or.african.american, y = (percent.advanced + percent.proficient))) +
+  geom_smooth(aes(x = percent.black.or.african.american, y = (percent.advanced + percent.proficient)), formula = "y ~ x", method = "lm", color = "red") +
+  labs(x = "Percentage of African American Students", y = "% of Students Scoring Advanced or Proficient in Algebra", caption = "Note: Blue dashed line is the percentage of students scoring advanced or proficient in all charter schools in Philadelphia")
+```
+
+```{r}
+ggplot(analytic_biology) +
+  geom_hline(aes(yintercept = (overall.percent.advanced + overall.percent.proficient)), linetype = "dashed", color = "blue") +
+  geom_point(aes(x = percent.black.or.african.american, y = (percent.advanced + percent.proficient))) +
+  geom_smooth(aes(x = percent.black.or.african.american, y = (percent.advanced + percent.proficient)), formula = "y ~ x", method = "lm", color = "red") +
+  labs(x = "Percentage of African American Students", y = "% of Students Scoring Advanced or Proficient in Biology", caption = "Note: Blue dashed line is the percentage of students scoring advanced or proficient in all charter schools in Philadelphia")
+```
+
+```{r}
+ggplot(analytic_literature) +
+  geom_hline(aes(yintercept = (overall.percent.advanced + overall.percent.proficient)), linetype = "dashed", color = "blue") +
+  geom_point(aes(x = percent.black.or.african.american, y = (percent.advanced + percent.proficient))) +
+  geom_smooth(aes(x = percent.black.or.african.american, y = (percent.advanced + percent.proficient)), formula = "y ~ x", method = "lm", color = "red") +
+  labs(x = "Percentage of African American Students", y = "% of Students Scoring Advanced or Proficient in Literature", caption = "Note: Blue dashed line is the percentage of students scoring advanced or proficient in all charter schools in Philadelphia")
+```
+
+```{r}
+analytic_algebra_long <- select(analytic_algebra, lea.name, percent.advanced, percent.proficient, percent.basic, percent.below.basic)
+analytic_algebra_long <- pivot_longer(
+  analytic_algebra_long,
+  starts_with("percent"),
+  names_to = "Result",
+  values_to = "Percentage"
+  ) 
+ggplot(analytic_algebra_long, aes(Result, Percentage)) +
+  geom_boxplot()
+```
+
+```{r}
+analytic_biology_long <- select(analytic_biology, lea.name, percent.advanced, percent.proficient, percent.basic, percent.below.basic)
+analytic_biology_long <- pivot_longer(
+  analytic_biology_long,
+  starts_with("percent"),
+  names_to = "Result",
+  values_to = "Percentage"
+  ) 
+ggplot(analytic_biology_long, aes(Result, Percentage)) +
+  geom_boxplot()
+```
+
+```{r}
+analytic_literature_long <- select(analytic_literature, lea.name, percent.advanced, percent.proficient, percent.basic, percent.below.basic)
+analytic_literature_long <- pivot_longer(
+  analytic_literature_long,
+  starts_with("percent"),
+  names_to = "Result",
+  values_to = "Percentage"
+  ) 
+ggplot(analytic_literature_long, aes(Result, Percentage)) +
+  geom_boxplot()
+```
+

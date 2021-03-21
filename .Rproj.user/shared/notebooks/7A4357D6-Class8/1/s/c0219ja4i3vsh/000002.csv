@@ -1,0 +1,3 @@
+"0","ggplot(mtcars) +"
+"0","  geom_col(aes(x = factor(gear, levels=3:5, labels=c(""3 Gear"", ""4 Gear"", ""5 Gear"")), y = hp, fill = hp), position = ""dodge2"") + "
+"0","  labs(x = """", y = ""Horsepower (hp)"", fill = ""Horsepower (hp)"")"

@@ -1,0 +1,8 @@
+## Class 8 - Mar 17, 2021
+
+rm(list=ls())
+
+#install.packages("tidyverse")
+library(tidyverse)
+library(readxl)
+

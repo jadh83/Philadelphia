@@ -1,0 +1,5 @@
+"0","ggplot(mtcars) +"
+"0","  geom_hline(aes(yintercept=20), linetype=""dashed"", color=""blue"") +"
+"0","  geom_point(aes(x = hp, y = mpg)) +"
+"0","  geom_smooth(aes(x = hp, y = mpg), formula=""y ~ x"", method=""lm"", color=""red"") +"
+"0","  labs(x = ""Horsepower"", y = ""Miles per Gallon (mpg)"", title = ""MPG vs. HP"", caption = ""Note: Red line is a linear model"")"

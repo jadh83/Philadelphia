@@ -1,0 +1,5 @@
+"0","ggplot(analytic_biology) +"
+"0","  geom_hline(aes(yintercept = (overall.percent.advanced + overall.percent.proficient)), linetype = ""dashed"", color = ""blue"") +"
+"0","  geom_point(aes(x = percent.black.or.african.american, y = (percent.advanced + percent.proficient))) +"
+"0","  geom_smooth(aes(x = percent.black.or.african.american, y = (percent.advanced + percent.proficient)), formula = ""y ~ x"", method = ""lm"", color = ""red"") +"
+"0","  labs(x = ""Percentage of African American Students"", y = ""% of Students Scoring Advanced or Proficient in Biology"", caption = ""Note: Blue dashed line is the percentage of students scoring advanced or proficient in all charter schools in Philadelphia"")"

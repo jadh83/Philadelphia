@@ -1,0 +1,7 @@
+"0","ggplot(mtcars) +"
+"0","  geom_point(aes(x = hp, y = mpg)) +"
+"0","  labs(x = ""Horsepower"", y = ""Miles per Gallon (mpg)"") +"
+"0","  facet_grid("
+"0","    rows=vars(factor(gear, levels=3:5, labels=c(""3 Gear"", ""4 Gear"", ""5 Gear""))),"
+"0","    cols=vars(carb)"
+"0","  )"

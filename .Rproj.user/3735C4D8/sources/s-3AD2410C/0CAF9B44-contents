@@ -1,0 +1,63 @@
+---
+title: "Class 8"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+rm(list=ls())
+
+# load libraries
+library(tidyverse)
+library(patchwork)
+
+options(scipen=999)
+
+theme_set(theme_classic())
+
+# define functions
+##
+
+# load data
+data(mtcars)
+```
+
+```{r}
+ggplot(mtcars) +
+  geom_hline(aes(yintercept=20), linetype="dashed", color="blue") +
+  geom_point(aes(x = hp, y = mpg)) +
+  geom_smooth(aes(x = hp, y = mpg), formula="y ~ x", method="lm", color="red") +
+  labs(x = "Horsepower", y = "Miles per Gallon (mpg)", title = "MPG vs. HP", caption = "Note: Red line is a linear model")
+```
+
+### Faceting
+
+```{r}
+ggplot(mtcars) +
+  geom_point(aes(x = hp, y = mpg)) +
+  labs(x = "Horsepower", y = "Miles per Gallon (mpg)") +
+  facet_wrap(vars(factor(gear, levels=3:5, labels=c("3 Gear", "4 Gear", "5 Gear"))))
+```
+
+```{r}
+ggplot(mtcars) +
+  geom_col(aes(x = factor(gear, levels=3:5, labels=c("3 Gear", "4 Gear", "5 Gear")), y = hp, fill = hp), position = "dodge2") + 
+  labs(x = "", y = "Horsepower (hp)", fill = "Horsepower (hp)")
+```
+#### Grid
+
+```{r}
+ggplot(mtcars) +
+  geom_point(aes(x = hp, y = mpg)) +
+  labs(x = "Horsepower", y = "Miles per Gallon (mpg)") +
+  facet_grid(
+    rows=vars(factor(gear, levels=3:5, labels=c("3 Gear", "4 Gear", "5 Gear"))),
+    cols=vars(carb)
+  )
+```
+
+### Patchwork
+
+```{r}
+
+```
+
